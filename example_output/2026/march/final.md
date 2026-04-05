@@ -4,6 +4,12 @@ year: 2026
 type: monthly_digest
 weeks_covered: [1, 2, 3, 4]
 generated_at: "2026-04-03T15:45:00Z"
+run_mode: literal_delegated_example
+source_weeklies:
+  - week1.md
+  - week2.md
+  - week3.md
+  - week4.md
 total_papers_covered: 13
 total_industry_items_covered: 16
 ---

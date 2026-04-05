@@ -15,7 +15,7 @@ Outputs:
 - optionally `YEAR/month/final.md`
 
 Parallel notes:
-- fetch steps may be delegated
+- fetch steps may be delegated to sub-agents or workers in parallel
 - synthesis and final writes must remain single-owner
 
 ## `fetch_academia`

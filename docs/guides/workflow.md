@@ -34,6 +34,19 @@ Not parallel-safe:
 The reason is simple: source gathering is independent, but editorial synthesis
 needs one merged view and one consistent judgment layer.
 
+## Sub-Agent Pattern
+
+For agent runtimes that support delegation, NEWSLY should be pitched and used as
+a sub-agent workflow:
+
+1. the orchestrator keeps ownership of the run
+2. three workers gather academia, industry, and community signals in parallel
+3. the orchestrator merges the returned blocks
+4. one owner writes the weekly or monthly synthesis
+
+This is the core performance story of the project. NEWSLY is faster because the
+expensive discovery phase is parallelizable, while the editorial phase remains coherent.
+
 ## Output Layout
 
 ```text

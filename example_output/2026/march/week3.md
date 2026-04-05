@@ -4,6 +4,11 @@ month: march
 year: 2026
 date_range: "March 15-21, 2026"
 generated_at: "2026-04-03T15:45:00Z"
+run_mode: literal_delegated_example
+worker_inputs:
+  - run_artifacts/academia_blocks.md
+  - run_artifacts/industry_blocks.md
+  - run_artifacts/viral_blocks.md
 sources_count:
   academia: 4
   industry: 3

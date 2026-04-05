@@ -18,6 +18,18 @@ write files can adapt the same pipeline.
 - keeps the final weekly and monthly editorial passes single-owner and coherent
 - documents the installation, output structure, and adaptation rules clearly
 
+## Why It Is Different
+
+The main selling point is not just "AI news summarization." NEWSLY is designed
+as a parallelizable agent workflow.
+
+- `ai_news` is the single entrypoint
+- the three fetch skills are intentionally independent
+- agents that support sub-agents can run those fetch steps concurrently
+- weekly and monthly synthesis stay centralized so the final output keeps one voice
+
+That gives you faster runs without turning the final digest into a stitched-together mess.
+
 ## Skill Map
 
 | Skill | Role |
@@ -33,9 +45,15 @@ write files can adapt the same pipeline.
 
 1. `ai_news` resolves the target week or month.
 2. It gathers research, industry, and community blocks.
-3. If the agent supports delegation, the three fetch steps can run in parallel.
+3. If the agent supports delegation or sub-agents, the three fetch steps can run in parallel.
 4. `synthesize_week` merges the blocks into `YEAR/month/weekN.md`.
 5. When four weekly files exist, `synthesize_monthly` builds `YEAR/month/final.md`.
+
+In short:
+
+- parallelize fetch
+- centralize synthesis
+- keep one orchestrator in control
 
 ## Installation
 
@@ -56,8 +74,14 @@ There is also a PowerShell helper at `scripts/install-skills.ps1`.
 
 ## Example Run
 
-A representative full-month sample run lives in `example_output/2026/march/`.
-It shows the expected weekly and monthly output shape for a complete month.
+A literal delegated sample run lives in `example_output/2026/march/`.
+It includes:
+
+- saved fetch-worker outputs under `run_artifacts/`
+- a run manifest with the delegated worker IDs
+- synthesized weekly files plus a monthly `final.md`
+
+That makes the parallel-subagent execution model visible instead of just describing it.
 
 ## Licensing
 
