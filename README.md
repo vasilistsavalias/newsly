@@ -1,16 +1,41 @@
 # NEWSLY
 
-NEWSLY is an agent-agnostic AI news orchestration framework built around a small
-set of composable skills. It lets an AI agent gather academic, industry, and
-community AI signals, synthesize them into weekly and monthly digests, and write
-structured output files with one command.
+NEWSLY is an agent-agnostic AI news orchestration framework for teams that want
+AI news coverage without a manual research grind. It gives an AI agent one
+entrypoint, three parallelizable fetch tracks, and a single synthesis layer for
+turning raw signals into clean weekly and monthly digests.
 
-The project is designed for public reuse. The skills can be installed into local
-or global `.codex` skill directories, but the workflow is not Codex-only. Any
-agent runtime that can read Markdown-based skill specs, browse sources, and
-write files can adapt the same pipeline.
+The project is designed for public reuse. The skills can be installed into
+local or global `.codex` skill directories, but the workflow is not Codex-only.
+Any agent runtime that can read Markdown skill specs, browse sources, and write
+files can adapt the same pattern.
 
-## What NEWSLY Does
+## Why NEWSLY
+
+Most AI news workflows are either:
+
+- manual and slow
+- fully automated but shallow
+- multi-agent but messy in the final output
+
+NEWSLY is built around a stricter pattern:
+
+- one orchestrator
+- three independent fetch skills
+- parallel subagents when the runtime supports them
+- one synthesis owner for the final voice
+
+That is the core selling point. NEWSLY is faster because the discovery phase is
+parallel, but it stays readable because the writing phase is centralized.
+
+## Who It Is For
+
+- AI researchers who want a compact weekly or monthly scan
+- labs that need academic, product, and community signals in one place
+- agent builders who want a concrete parallel-subagent workflow
+- open-source users who want reusable skills, docs, and example outputs
+
+## What It Does
 
 - runs a one-command weekly AI news pipeline through `ai_news`
 - separates source gathering from weekly and monthly synthesis
@@ -18,17 +43,12 @@ write files can adapt the same pipeline.
 - keeps the final weekly and monthly editorial passes single-owner and coherent
 - documents the installation, output structure, and adaptation rules clearly
 
-## Why It Is Different
-
-The main selling point is not just "AI news summarization." NEWSLY is designed
-as a parallelizable agent workflow.
+## How The Workflow Works
 
 - `ai_news` is the single entrypoint
 - the three fetch skills are intentionally independent
 - agents that support sub-agents can run those fetch steps concurrently
 - weekly and monthly synthesis stay centralized so the final output keeps one voice
-
-That gives you faster runs without turning the final digest into a stitched-together mess.
 
 ## Skill Map
 
@@ -54,6 +74,13 @@ In short:
 - parallelize fetch
 - centralize synthesis
 - keep one orchestrator in control
+
+## Start Here
+
+- install the skills: `docs/getting-started/install.md`
+- understand the workflow: `docs/guides/workflow.md`
+- inspect each skill contract: `docs/reference/skills.md`
+- review the literal delegated example run: `example_output/2026/march/`
 
 ## Installation
 
