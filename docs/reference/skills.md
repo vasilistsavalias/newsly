@@ -18,6 +18,16 @@ Parallel notes:
 - fetch steps may be delegated to sub-agents or workers in parallel
 - synthesis and final writes must remain single-owner
 
+## `get_news`
+
+Role:
+Provide the easiest possible NEWSLY entrypoint for users who just want to kick off the pipeline.
+
+Behavior:
+- thin alias for `ai_news`
+- preserves user arguments and flags
+- exists for discoverability and convenience
+
 ## `fetch_academia`
 
 Role:

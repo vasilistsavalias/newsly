@@ -4,6 +4,7 @@ This folder contains the reusable skill layer for NEWSLY.
 
 ## Included Skills
 
+- `get_news`: the simplest kickoff alias, forwarding to the orchestrator
 - `ai_news`: the orchestrator and default entrypoint
 - `fetch_academia`: gathers academic AI research
 - `fetch_industry`: gathers model, API, and tooling changes

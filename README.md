@@ -54,6 +54,7 @@ parallel, but it stays readable because the writing phase is centralized.
 
 | Skill | Role |
 |------|------|
+| `get_news` | Quick-start alias that hands off to the NEWSLY orchestrator |
 | `ai_news` | Orchestrates the full weekly or monthly workflow |
 | `fetch_academia` | Finds the strongest recent AI research signals |
 | `fetch_industry` | Finds important model, API, and tooling changes |

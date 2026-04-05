@@ -9,6 +9,7 @@ $ErrorActionPreference = "Stop"
 $repoRoot = Split-Path -Parent $PSScriptRoot
 $sourceRoot = Join-Path $repoRoot "ai_news_skills"
 $skillNames = @(
+    "get_news",
     "ai_news",
     "fetch_academia",
     "fetch_industry",
